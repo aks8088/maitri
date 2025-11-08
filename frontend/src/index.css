@@ -1,0 +1,193 @@
+/* ---------- Enable Tailwind ---------- */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------- Custom Fonts ---------- */
+@import "@fontsource/inter";
+
+/* ---------- Root Base Styles ---------- */
+:root {
+  font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #0b1120; /* space-dark tone */
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---------- Link Styling ---------- */
+a {
+  font-weight: 500;
+  color: #60a5fa; /* Tailwind blue-400 */
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #3b82f6; /* Tailwind blue-500 */
+}
+
+/* ---------- Body Styling ---------- */
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(to bottom right, #0f172a, #1e3a8a);
+  color: rgba(255, 255, 255, 0.87);
+}
+
+/* ---------- Typography ---------- */
+h1 {
+  font-size: 2.25rem; /* Tailwind text-4xl */
+  font-weight: 700;
+  color: #60a5fa;
+}
+
+/* ---------- Buttons ---------- */
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  cursor: pointer;
+  transition: border-color 0.25s, background-color 0.25s, transform 0.2s;
+}
+
+button:hover {
+  border-color: #60a5fa;
+  background-color: #111827;
+  transform: scale(1.05);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* ---------- Custom Utility (used in App.jsx) ---------- */
+.text-light {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.text-accent {
+  color: #60a5fa; /* matches Tailwind blue-400 */
+}
+
+/* ---------- Light Mode Adjustment ---------- */
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+
+  a {
+    color: #2563eb;
+  }
+
+  a:hover {
+    color: #1d4ed8; /* Tailwind blue-700 */
+  }
+
+  button {
+    background-color: #f9f9f9;
+    color: #213547;
+  }
+}
+/* ---------- Floating Astronaut Animation ---------- */
+.astronaut {
+  position: fixed;
+  bottom: 10%;
+  right: 10%;
+  width: 100px;
+  height: 100px;
+  background: url("data:image/svg+xml;utf8,<svg width='100' height='100' viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg' fill='%23ffffff'><path d='M256 32C132.3 32 32 132.3 32 256s100.3 224 224 224 224-100.3 224-224S379.7 32 256 32zm0 400c-97.1 0-176-78.9-176-176S158.9 80 256 80s176 78.9 176 176-78.9 176-176 176z'/><circle cx='256' cy='256' r='96'/><path d='M386.3 302.2l-27.7-16c-8.3-4.8-18.8-2-23.6 6.3l-11.5 19.9c-13.4-10.1-28.4-18.1-44.6-23l7.8-22.9c3.3-9.7-1.9-20.3-11.6-23.6l-30.9-10.5c-9.7-3.3-20.3 1.9-23.6 11.6l-7.8 22.9c-17.2 2.3-33.4 7.8-48.3 15.9l-11.5-19.9c-4.8-8.3-15.3-11.1-23.6-6.3l-27.7 16c-8.3 4.8-11.1 15.3-6.3 23.6l16 27.7c4.8 8.3 15.3 11.1 23.6 6.3l11.5-6.7c12.1 16.8 27.2 31.4 44.8 42.5l-6.7 11.5c-4.8 8.3-2 18.8 6.3 23.6l27.7 16c8.3 4.8 18.8 2 23.6-6.3l6.7-11.5c19.8 4.9 40.9 6.7 62.1 4.7l-6.7 11.5c-4.8 8.3-2 18.8 6.3 23.6l27.7 16c8.3 4.8 18.8 2 23.6-6.3l16-27.7c4.8-8.3 2-18.8-6.3-23.6z'/></svg>")
+    no-repeat center;
+  background-size: contain;
+  opacity: 0.8;
+  animation: floatAstronaut 20s ease-in-out infinite alternate,
+             rotateAstronaut 60s linear infinite;
+  z-index: 2;
+}
+
+@keyframes floatAstronaut {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-50px, -40px) scale(1.05);
+  }
+  100% {
+    transform: translate(20px, 60px) scale(0.95);
+  }
+}
+
+@keyframes rotateAstronaut {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+/* Floating Astronaut */
+.astronaut {
+  position: fixed;
+  bottom: 10%;
+  right: 10%;
+  width: 100px;
+  height: 100px;
+  background: url("data:image/svg+xml;utf8,<svg width='100' height='100' xmlns='http://www.w3.org/2000/svg' fill='%23ffffff'><circle cx='50' cy='50' r='40'/></svg>")
+    no-repeat center;
+  background-size: contain;
+  opacity: 0.8;
+  animation: floatAstronaut 20s ease-in-out infinite alternate,
+             rotateAstronaut 60s linear infinite,
+             driftAstronaut 60s ease-in-out infinite alternate;
+  z-index: 2;
+}
+
+@keyframes floatAstronaut {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-50px, -40px) scale(1.05); }
+  100% { transform: translate(20px, 60px) scale(0.95); }
+}
+@keyframes rotateAstronaut {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@keyframes driftAstronaut {
+  0% { right: 10%; bottom: 10%; }
+  50% { right: 30%; bottom: 30%; }
+  100% { right: 15%; bottom: 20%; }
+}
+
+/* Shooting Stars */
+.shooting-stars::before,
+.shooting-stars::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 80px;
+  background: linear-gradient(45deg, white, transparent);
+  opacity: 0.4;
+  animation: shootStar 6s ease-in-out infinite;
+}
+.shooting-stars::after {
+  animation-delay: 3s;
+}
+@keyframes shootStar {
+  0% { transform: translate(0, 0) rotate(45deg); opacity: 0; }
+  20% { opacity: 1; }
+  100% { transform: translate(500px, 500px) rotate(45deg); opacity: 0; }
+}

@@ -1,0 +1,650 @@
+/* ----------------- GLOBAL BASE STYLES ------------------ */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+  color: #e5e7eb;
+  background: radial-gradient(circle at 20% 20%, #020617 0%, #0f172a 60%, #1e293b 100%);
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* ----------------- STAR BACKGROUND ANIMATION ------------------ */
+.stars {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: transparent url("https://www.transparenttextures.com/patterns/stardust.png") repeat;
+  z-index: -1;
+  animation: twinkle 40s linear infinite;
+  opacity: 0.3;
+}
+
+@keyframes twinkle {
+  from { background-position: 0 0; }
+  to { background-position: 1000px 1000px; }
+}
+
+/* ----------------- HOME PAGE ------------------ */
+.home-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.home-content {
+  background: rgba(15, 23, 42, 0.8);
+  padding: 3rem 5rem;
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 25px rgba(59, 130, 246, 0.4);
+}
+
+.title {
+  font-size: 3rem;
+  color: #60a5fa;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #cbd5e1;
+  margin-bottom: 2rem;
+}
+
+.auth-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.auth-buttons button {
+  background: linear-gradient(135deg, #2563eb, #1e3a8a);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.8rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.auth-buttons button:hover {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  transform: scale(1.05);
+}
+
+/* ----------------- AUTH BOX ------------------ */
+.auth-screen {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-box {
+  background: rgba(15, 23, 42, 0.85);
+  padding: 3rem 4rem;
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  text-align: center;
+  box-shadow: 0 0 30px rgba(37, 99, 235, 0.4);
+}
+
+.auth-box h2 {
+  color: #60a5fa;
+  margin-bottom: 1rem;
+}
+
+.auth-box input {
+  display: block;
+  width: 100%;
+  margin: 0.6rem 0;
+  padding: 0.8rem;
+  background: rgba(10, 15, 25, 0.8);
+  border: 1px solid rgba(59, 130, 246, 0.5);
+  border-radius: 10px;
+  color: #fff;
+  outline: none;
+}
+
+.auth-box button {
+  margin-top: 1rem;
+  width: 100%;
+  background: linear-gradient(135deg, #2563eb, #1e3a8a);
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.auth-box button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+/* ----------------- DASHBOARD LAYOUT ------------------ */
+.dashboard-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0 2rem;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(15, 23, 42, 0.8);
+  padding: 1rem 2rem;
+  border-radius: 15px;
+  margin-top: 1rem;
+  box-shadow: 0 0 20px rgba(30, 64, 175, 0.3);
+}
+
+.profile-icon {
+  cursor: pointer;
+  color: #93c5fd;
+  transition: transform 0.2s ease;
+}
+.profile-icon:hover {
+  transform: scale(1.15);
+}
+
+/* PROFILE DROPDOWN */
+.relative {
+  position: relative;
+}
+.relative .absolute {
+  position: absolute;
+}
+
+/* HORIZONTAL NAVIGATION BAR */
+.horizontal-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  background: rgba(15, 23, 42, 0.85);
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.25);
+}
+
+.horizontal-nav button {
+  background: transparent;
+  border: 2px solid transparent;
+  color: #cbd5e1;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.6rem 1.4rem;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.horizontal-nav button:hover {
+  color: #60a5fa;
+  border-color: #3b82f6;
+  background: rgba(30, 64, 175, 0.3);
+}
+
+.horizontal-nav .active {
+  background: linear-gradient(135deg, #2563eb, #1e3a8a);
+  color: #fff;
+  border: none;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+/* SECTION CARDS */
+.section {
+  background: rgba(15, 23, 42, 0.8);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-top: 1.5rem;
+  box-shadow: 0 0 25px rgba(59, 130, 246, 0.15);
+  backdrop-filter: blur(20px);
+}
+
+.section h2 {
+  color: #60a5fa;
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+}
+
+/* INPUTS */
+.inputs {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.inputs input {
+  padding: 0.8rem 1rem;
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid #334155;
+  border-radius: 10px;
+  color: #fff;
+  width: 20%;
+}
+
+.section button {
+  background: linear-gradient(135deg, #2563eb, #1e3a8a);
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.section button:hover {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  transform: scale(1.05);
+}
+
+/* CHART AREA */
+.chart-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* CHATBOT */
+.chat-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.chat-area input {
+  width: 60%;
+  padding: 0.8rem;
+  border-radius: 10px;
+  border: 1px solid #334155;
+  background: rgba(30, 41, 59, 0.8);
+  color: white;
+}
+
+.chat-area button {
+  background: linear-gradient(135deg, #2563eb, #1e3a8a);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.chat-area button:hover {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 1rem;
+  color: #94a3b8;
+  margin-top: 2rem;
+}
+/* ----------------- ANALYTICS SECTION ------------------ */
+/* ----------------- ANALYTICS SECTION ------------------ */
+.analytics-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.analytics-title {
+  text-align: center;
+  color: #93c5fd;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+/* SUMMARY CARDS */
+.analytics-summary {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.metric-card {
+  background: rgba(15, 23, 42, 0.8);
+  border-radius: 15px;
+  padding: 1.2rem 2rem;
+  text-align: center;
+  min-width: 200px;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.metric-card h4 {
+  color: #cbd5e1;
+  margin-bottom: 0.3rem;
+}
+
+.metric-card p {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.glow-blue:hover {
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.7);
+  transform: scale(1.05);
+}
+.glow-green:hover {
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.7);
+  transform: scale(1.05);
+}
+.glow-purple:hover {
+  box-shadow: 0 0 15px rgba(147, 51, 234, 0.7);
+  transform: scale(1.05);
+}
+
+/* CHART AREA */
+.analytics-charts {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.chart-card {
+  background: rgba(15, 23, 42, 0.85);
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 0 25px rgba(59, 130, 246, 0.2);
+  flex: 1 1 45%;
+  transition: all 0.3s ease;
+}
+
+.chart-card.wide {
+  flex: 1 1 60%;
+}
+
+.chart-card.radial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chart-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 30px rgba(96, 165, 250, 0.4);
+}
+
+.chart-card h3 {
+  color: #a5b4fc;
+  margin-bottom: 1rem;
+}
+
+.radial-label {
+  color: #cbd5e1;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  text-align: center;
+  opacity: 0.8;
+}
+
+/* SUMMARY BOX */
+.summary-box {
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid #2563eb;
+  border-radius: 15px;
+  padding: 1rem;
+  margin-top: 1rem;
+  text-align: center;
+  color: #cbd5e1;
+  box-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
+}
+.card.glass {
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.card.glass:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px rgba(59, 130, 246, 0.3);
+}
+.breathing-circle {
+  margin: 2rem auto;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: rgba(96, 165, 250, 0.5);
+  animation: breathe 6s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.8); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.7; }
+}
+/* ---------- Global Base (no external images) ---------- */
+:root{
+  --bg:#0b1220;
+  --panel:rgba(15,23,42,.75);
+  --border:rgba(59,130,246,.25);
+  --text:#e5e7eb;
+  --muted:#94a3b8;
+  --brand:#60a5fa;
+}
+
+*{box-sizing:border-box}
+html,body,#root{height:100%}
+body{
+  margin:0;
+  font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  color:var(--text);
+  background: radial-gradient(1200px 600px at 20% 10%, #0f1a36 0%, #0b1220 60%, #070b15 100%);
+  overflow: hidden;
+}
+
+/* ---------- Animated starfield layers ---------- */
+.stars{position:fixed;left:0;top:0;width:200%;height:200%;pointer-events:none;z-index:-1;background-repeat:repeat}
+.stars-a{background-image:radial-gradient(1px 1px at 20% 30%,#6ee7ff 50%,transparent 51%), radial-gradient(1px 1px at 80% 70%,#93c5fd 50%,transparent 51%), radial-gradient(1px 1px at 50% 50%,#a78bfa 50%,transparent 51%);animation: drift 80s linear infinite}
+.stars-b{background-image:radial-gradient(1.5px 1.5px at 10% 80%,#60a5fa 50%,transparent 51%), radial-gradient(1.5px 1.5px at 70% 20%,#22d3ee 50%,transparent 51%);opacity:.7;animation: drift 120s linear infinite reverse}
+.stars-c{background-image:radial-gradient(2px 2px at 30% 60%,#38bdf8 50%,transparent 51%), radial-gradient(2px 2px at 90% 40%,#c084fc 50%,transparent 51%);opacity:.4;animation: drift 140s linear infinite}
+@keyframes drift{0%{transform:translate3d(0,0,0)}100%{transform:translate3d(-25%, -25%,0)}}
+
+/* ---------- Home (glowing MAITRI caption) ---------- */
+.home-container{
+  height:100vh;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;gap:24px;position:relative;
+}
+.home-content{
+  padding:2rem 3rem;border-radius:18px;background:var(--panel);backdrop-filter:blur(10px);border:1px solid var(--border);
+}
+.glow-title{display:flex;flex-direction:column;align-items:center;gap:.5rem}
+.glow-title .brand{
+  font-size:3rem;letter-spacing:.1em;font-weight:800;color:#dbeafe;
+  text-shadow:0 0 18px rgba(96,165,250,.5), 0 0 40px rgba(56,189,248,.35);
+}
+.glow-title .tagline{
+  font-size:.95rem;color:#cbd5e1
+}
+.auth-buttons{display:flex;gap:12px;justify-content:center;margin-top:12px}
+.auth-buttons button{
+  background:linear-gradient(135deg,#2563eb,#1e3a8a);color:#fff;border:none;padding:.75rem 1.25rem;border-radius:10px;font-weight:600;cursor:pointer
+}
+.auth-buttons button:hover{transform:translateY(-1px);filter:brightness(1.08)}
+
+/* ---------- Auth ---------- */
+.auth-screen{height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+.auth-box{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:2rem 2.25rem;text-align:center;min-width:300px}
+.auth-box h2{color:var(--brand);margin:.5rem 0 1rem}
+.auth-box input{width:100%;margin:.45rem 0;padding:.7rem .9rem;border-radius:10px;background:#0a1222;border:1px solid #12335a;color:#eaf2ff}
+.auth-box button{width:100%;margin-top:.75rem;background:#2563eb;color:#fff;border:none;padding:.75rem;border-radius:10px;font-weight:700;cursor:pointer}
+.linkish{color:#9fd2ff;cursor:pointer}
+.linkish:hover{text-decoration:underline}
+
+/* ---------- App shell ---------- */
+.dashboard-layout{height:100vh;display:flex;flex-direction:column}
+.navbar{display:flex;justify-content:space-between;align-items:center;padding:.75rem 1rem;border-bottom:1px solid var(--border);background:linear-gradient( to bottom, rgba(11,18,32,.85), rgba(11,18,32,.6))}
+.glass{backdrop-filter:blur(8px)}
+.dropdown{
+  position:absolute;right:0;margin-top:.6rem;background:#0f172a;color:#fff;border:1px solid rgba(59,130,246,.2);
+  border-radius:12px;padding:.6rem;width:180px
+}
+.dropdown-user{text-align:center;margin:.25rem 0 .5rem;color:#93c5fd}
+.dropdown-item{width:100%;padding:.5rem .6rem;background:transparent;color:#e5e7eb;border:1px solid rgba(148,163,184,.2);border-radius:10px;margin-bottom:.4rem;cursor:pointer}
+.dropdown-item:hover{background:rgba(148,163,184,.08)}
+.dropdown-logout{width:100%;display:flex;align-items:center;justify-content:center;gap:.5rem;background:#2563eb;border:none;color:#fff;padding:.55rem;border-radius:10px;cursor:pointer}
+.horizontal-nav{display:flex;gap:.5rem;padding:.5rem 1rem;border-bottom:1px solid var(--border);background:linear-gradient( to bottom, rgba(11,18,32,.65), rgba(11,18,32,.4))}
+.horizontal-nav button{
+  appearance:none;border:none;padding:.5rem .8rem;border-radius:999px;cursor:pointer;color:#cbd5e1;background:rgba(59,130,246,.12);border:1px solid rgba(59,130,246,.2)
+}
+.horizontal-nav button.active{background:#2563eb;color:white;border-color:#2563eb}
+.main-content{flex:1;min-height:0;overflow:auto;padding:1rem 1.25rem}
+.status{color:#86efac;margin-bottom:.5rem;font-size:.9rem}
+.section{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:1rem 1.1rem;margin-bottom:1rem}
+.inputs{display:grid;grid-template-columns:repeat(3, minmax(0,1fr));gap:.6rem;margin:.75rem 0}
+.inputs input{
+  padding:.65rem .75rem;border-radius:10px;background:#0a1222;border:1px solid #12335a;color:#eaf2ff
+}
+.section button{
+  background:#2563eb;color:#fff;border:none;padding:.65rem 1rem;border-radius:10px;font-weight:700;cursor:pointer
+}
+.footer{padding:.6rem 1rem;text-align:center;color:#9fb0c8;opacity:.9}
+
+/* ---------- Charts ---------- */
+.chart-card{background:rgba(15,23,42,.6);border:1px solid rgba(59,130,246,.2);border-radius:16px;padding:12px}
+.chart-title{color:#c7d2fe;margin:.25rem 0 .5rem}
+.summary-box{
+  background:rgba(30,41,59,.6);border:1px solid rgba(148,163,184,.2);border-radius:14px;padding:.8rem 1rem;color:#d1d5db
+}
+
+/* ---------- Drills (exercise hub) ---------- */
+.drills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:10px}
+.drill-card{background:rgba(15,23,42,.6);border:1px solid rgba(59,130,246,.2);border-radius:16px;padding:12px}
+.drill-header{display:flex;align-items:center;gap:.5rem;color:#93c5fd;font-weight:600;margin-bottom:.25rem}
+.drill-sub{color:#a5b4fc;font-size:.9rem;margin:0 0 .5rem}
+.btn-ghost{background:transparent;color:#e5e7eb;border:1px solid rgba(148,163,184,.3);padding:.5rem .75rem;border-radius:10px;cursor:pointer}
+.btn-ghost:hover{background:rgba(148,163,184,.08)}
+.timer-readout{margin-top:.4rem;color:#cbd5e1;font-variant-numeric:tabular-nums}
+.timer-readout.ticking{color:#86efac}
+
+/* Focus Visualization */
+.focus-star{position:relative;height:140px;display:flex;align-items:center;justify-content:center}
+.focus-core{
+  width:12px;height:12px;border-radius:999px;background:#ffffff;box-shadow:0 0 12px #fff,0 0 28px #38bdf8,0 0 60px #60a5fa;animation:pulse 2.6s ease-in-out infinite
+}
+.focus-ring{
+  position:absolute;width:140px;height:140px;border-radius:999px;border:1px dashed rgba(148,163,184,.35);animation:ring 6s linear infinite
+}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.25)}}
+@keyframes ring{to{transform:rotate(360deg)}}
+
+/* Zero-Gravity Stretch (inhale/hold/exhale) */
+.zero-stretch{display:flex;gap:8px;align-items:flex-end;height:90px;margin:.4rem 0}
+.stretch-bar{width:16px;border-radius:8px;background:linear-gradient(180deg,#38bdf8,#0ea5e9)}
+.stretch-a{height:20px;animation:stretch-a 6s ease-in-out infinite}
+.stretch-b{height:20px;animation:stretch-b 6s ease-in-out infinite}
+.stretch-c{height:20px;animation:stretch-c 6s ease-in-out infinite}
+@keyframes stretch-a{0%{height:20px}33%{height:90px}66%{height:90px}100%{height:20px}}
+@keyframes stretch-b{0%{height:20px}33%{height:20px}66%{height:90px}100%{height:20px}}
+@keyframes stretch-c{0%{height:20px}33%{height:20px}66%{height:20px}100%{height:90px}}
+.stretch-legend{display:flex;justify-content:space-between;color:#94a3b8;font-size:.8rem}
+
+/* Calm Orbit */
+.calm-orbit{position:relative;height:140px;display:flex;align-items:center;justify-content:center}
+.orbit-path{position:absolute;width:120px;height:120px;border-radius:999px;border:1px solid rgba(148,163,184,.35)}
+.orbit-dot{position:absolute;width:10px;height:10px;border-radius:999px;background:#a78bfa;box-shadow:0 0 16px #a78bfa;animation:orbit 12s linear infinite}
+@keyframes orbit{from{transform:rotate(0deg) translateX(60px) rotate(0deg)}to{transform:rotate(360deg) translateX(60px) rotate(-360deg)}}
+
+/* misc */
+.hint{color:#9ecbff}
+.profile-icon{vertical-align:middle}
+
+/* -------- Floating Astronaut -------- */
+.astronaut-float {
+  position: fixed;
+  bottom: 10%;
+  left: 15%;
+  width: 180px;
+  height: 180px;
+  background-image: url('https://raw.githubusercontent.com/akshaykhale1992/astronaut-animation/main/astronaut.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: float 10s ease-in-out infinite, drift-astronaut 80s linear infinite;
+  opacity: 0.9;
+  z-index: -1;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-25px) rotate(2deg); }
+}
+
+@keyframes drift-astronaut {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(20vw, -10vh); }
+}
+.lottie-bg {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+.astro-lottie {
+  width: 250px;
+  position: absolute;
+  bottom: 15%;
+  left: 10%;
+  opacity: 0.9;
+}
+/* ---------- Astronaut Floating Animation ---------- */
+.astronaut-float {
+  position: fixed;
+  bottom: 12%;
+  left: 10%;
+  width: 180px;
+  height: 180px;
+  background-image: url('https://raw.githubusercontent.com/akshaykhale1992/astronaut-animation/main/astronaut.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: floatAstronaut 12s ease-in-out infinite, driftAstronaut 90s linear infinite;
+  opacity: 0.9;
+  z-index: -1;
+}
+
+@keyframes floatAstronaut {
+  0%, 100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-25px) rotate(2deg);
+  }
+}
+
+@keyframes driftAstronaut {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(25vw, -10vh);
+  }
+}
+
