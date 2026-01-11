@@ -3,6 +3,8 @@ import react from "@vitejs/plugin-react";
 import { VitePWA } from "vite-plugin-pwa";
 
 export default defineConfig({
+  base: "./",   // ✅ THIS IS THE MOST IMPORTANT LINE FOR VERCEL
+
   plugins: [
     react(),
     VitePWA({
@@ -18,12 +20,12 @@ export default defineConfig({
         start_url: "./",
         icons: [
           {
-            src: "/logo192.png",
+            src: "./logo192.png",   // ✅ FIXED PATH
             sizes: "192x192",
             type: "image/png",
           },
           {
-            src: "/logo512.png",
+            src: "./logo512.png",   // ✅ FIXED PATH
             sizes: "512x512",
             type: "image/png",
           },
